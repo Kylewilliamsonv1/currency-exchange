@@ -4,7 +4,9 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 
-// function clearEntry (){}
+function clearEntry (){
+  $('#currencyType').val("");
+}
 // function getData(response) {
 //   if (response) {
 
@@ -13,13 +15,13 @@ import './css/styles.css';
 
 $('#currency').click(function() {
   // let currencyType = $('#').val();
-  // clearEntry(); 
+  clearEntry(); 
   CurrencyExchange.getExchange().then(function(data) {
     $("#cadCurrency").text(data.cad);
-    $("#eurCurrency").text(data.cad);
-    $("#mxnCurrency").text(data.cad);
-    $("#bbdCurrency").text(data.cad);
-    $("#cnyCurrency").text(data.cad);
+    $("#eurCurrency").text(data.eur);
+    $("#mxnCurrency").text(data.mxn);
+    $("#bbdCurrency").text(data.bbd);
+    $("#cnyCurrency").text(data.cny);
 
   });
 
