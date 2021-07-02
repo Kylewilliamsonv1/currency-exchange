@@ -18,27 +18,33 @@ function userEntry() {
 }
 function conversion () {
   let inputType = userEntry.currencyType;
-  const array = ["CAD","EUR","MXN","BBD","CNY"];
-  for (let i=0; i <= array.length; i++) {
-    if(i.includes(inputType)) {
-      return i;
-    }
+  if(inputType === "CAD") {
+    $("#cadCurrency").text(data.cad);
   }
+
 }
 $("form#currencyCal").submit(function(event) {
   event.preventDefault();
+  let inputCurrency = userEntry.currencyType;
+  console.log(inputCurrency);
   clearEntry(); 
-  CurrencyExchange.getExchange()
-    .then(function(data) {
-      userEntry(data);
-      conversion();
+  CurrencyExchange.getExchange().then(function(data) {
+    if(inputCurrency === "CAD") {
       $("#cadCurrency").text(data.cad);
+    } 
+    if (inputCurrency === "EUR") {
       $("#eurCurrency").text(data.eur);
+    }  
+    if (inputCurrency === "MXN") {
       $("#mxnCurrency").text(data.mxn);
+    }  
+    if (inputCurrency === "BBD") {
       $("#bbdCurrency").text(data.bbd);
+    } 
+    if (inputCurrency === "CNY") {
       $("#cnyCurrency").text(data.cny);
-
-    });
+    }
+  });
 });
 
 
