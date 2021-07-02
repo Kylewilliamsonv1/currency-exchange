@@ -3,10 +3,7 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-// function getData(response) {
-//   if (response.conversion_rates.CAD) {
-//   }
-// }
+
 function clearEntry (){
   $('#inputAmount').val("");
   $('#inputCurrency').val("");
@@ -14,7 +11,6 @@ function clearEntry (){
 function userEntry() {
   let amount = parseInt($('#inputAmount').val());
   let currencyType = $('#inputCurrency').val();
-    if( )
   return {
     amount,
     currencyType,
