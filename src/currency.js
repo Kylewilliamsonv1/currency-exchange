@@ -13,12 +13,15 @@ export default class CurrencyExchange  {
         const mxn = response.conversion_rates.MXN;
         const bbd = response.conversion_rates.BBD;
         const cny = response.conversion_rates.CNY;
+        const conRates = response.conversion_rates;
+        console.log(conRates);
         return {
           cad,
           eur,
           mxn,
           bbd,
           cny,
+          conRates,
         };
       })
       .catch(function(error){
