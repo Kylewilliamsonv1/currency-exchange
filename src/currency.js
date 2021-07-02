@@ -9,14 +9,17 @@ export default class CurrencyExchange  {
       })
       .then(function(response) {
         const cad = response.conversion_rates.CAD;
-
-        console.log(response);
-        console.log(cad);
-
+        const eur = response.conversion_rates.EUR;
+        const mxn = response.conversion_rates.MXN;
+        const bbd = response.conversion_rates.BBD;
+        const cny = response.conversion_rates.CNY;
         return {
           cad,
+          eur,
+          mxn,
+          bbd,
+          cny,
         };
-
       })
       .catch(function(error){
         console.error(`Alert! We have an error: ${error.message}`);
