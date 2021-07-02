@@ -8,18 +8,36 @@ function clearEntry (){
   $('#inputAmount').val("");
   $('#inputCurrency').val("");
 }
-// function getData(response) {
-//   if (response) {
+function getData(response) {
+  if (response) {
 
+  }
+}
+
+function userEntry() {
+  let amount = parseInt($('#inputAmount').val());
+  let currencyType = $('#inputCurrency').val();
+  return {
+    amount,
+    currencyType,
+  };
+}
+// const array = ["CAD","EUR","MXN","BBD","CNY"];
+//   for (let i=0; i <= array.length; i++) {
+//     if(i = currencyType) {
+//       return i;
+//     }
 //   }
-// }
+//   return {
+//     amount,
+//     i,
+//   }
+
 
 $("form#currencyCal").submit(function(event) {
   event.preventDefault();
-  let amount = parseInt($('#inputAmount').val());
-  let currencyType = $('#inputCurrency').val();
-  const array = ["CAD","EUR","MXN","BBD","CNY"];
-  for (let i=0; i <= array.length; i++)
+
+  userEntry()
   clearEntry(); 
   CurrencyExchange.getExchange().then(function(data) {
     $("#cadCurrency").text(data.cad);
