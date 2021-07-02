@@ -3,36 +3,46 @@
 <head>
   <title>Currency Exchange Calculator</title>
 </head>
-<body class="container">
-  <div class="form">
-    <button class="btn-btn" id="currency">Get Currencies</button>
+<body>
+  <div class="container">
+    <form id=currencyCal>
+      <div class="form">
+        <label for="inputAmount"> Enter an amount in USD:</label>
+        <input id="inputAmount" class="form-control" type="text">
+      </div>
+      <div class="form">
+        <label for="inputCurrency"> Enter Currency Code:</label>
+        <input id="inputCurrency" class="form-control" type="text">
+      </div>
+      <button class="btn-btn" type="submit">Get Currencies</button>
+
+
+
+
+
+
+
+
+      <div class="output">
+        <label>Canadian Currency</label>
+        <p id="cadCurrency"></p>
+      </div>
+      <div class="output">
+        <label>Euro Currency</label>
+        <p id="eurCurrency"></p>
+      </div>
+      <div class="output">
+        <label>Mexican Currency</label>
+        <p id="mxnCurrency"></p>
+      </div>
+      <div class="output">
+        <label>Barbados Currency</label>
+        <p id="bbdCurrency"></p>
+      </div>
+      <div class="output">
+        <label>Chinese Currency</label>
+        <p id="cnyCurrency"></p>
+      </div>
+    </form>
   </div>
-
-
-
-  <div class="output">
-    <label>Canadian Currency</label>
-    <p id="cadCurrency"></p>
-  </div>
-  <div class="output">
-    <label>Euro Currency</label>
-    <p id="eurCurrency"></p>
-  </div>
-  <div class="output">
-    <label>Mexican Currency</label>
-    <p id="mxnCurrency"></p>
-  </div>
-  <div class="output">
-    <label>Barbados Currency</label>
-    <p id="bbdCurrency"></p>
-  </div>
-  <div class="output">
-    <label>Chinese Currency</label>
-    <p id="cnyCurrency"></p>
-  </div>
-
-
-
-
-
 </body>
