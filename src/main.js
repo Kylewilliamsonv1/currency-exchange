@@ -16,33 +16,26 @@ function userEntry() {
     currencyType,
   };
 }
-function conversion () {
-  let inputType = userEntry.currencyType;
-  if(inputType === "CAD") {
-    $("#cadCurrency").text(data.cad);
-  }
-
-}
 $("form#currencyCal").submit(function(event) {
   event.preventDefault();
   let inputCurrency = userEntry.currencyType;
   console.log(inputCurrency);
   clearEntry(); 
-  CurrencyExchange.getExchange().then(function(data) {
+  CurrencyExchange.getExchange().then(function(response) {
     if(inputCurrency === "CAD") {
-      $("#cadCurrency").text(data.cad);
+      $("#cadCurrency").text(response.cad);
     } 
     if (inputCurrency === "EUR") {
-      $("#eurCurrency").text(data.eur);
+      $("#eurCurrency").text(response.eur);
     }  
     if (inputCurrency === "MXN") {
-      $("#mxnCurrency").text(data.mxn);
+      $("#mxnCurrency").text(response.mxn);
     }  
     if (inputCurrency === "BBD") {
-      $("#bbdCurrency").text(data.bbd);
+      $("#bbdCurrency").text(response.bbd);
     } 
     if (inputCurrency === "CNY") {
-      $("#cnyCurrency").text(data.cny);
+      $("#cnyCurrency").text(response.cny);
     }
   });
 });
