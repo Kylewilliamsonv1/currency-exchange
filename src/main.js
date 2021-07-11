@@ -1,8 +1,8 @@
-import CurrencyExchange from './currency.js';
 import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
+import CurrencyExchange from './currency.js';
 
 function clearEntry (){
   $('#inputAmount').val("");
@@ -18,25 +18,11 @@ function userEntry() {
 }
 $("form#currencyCal").submit(function(event) {
   event.preventDefault();
-  let inputCurrency = userEntry.currencyType;
-  console.log(inputCurrency);
+  let inputCurrencyType = userEntry().currencyType;
+  console.log(inputCurrencyType);
   clearEntry(); 
-  CurrencyExchange.getExchange().then(function(response) {
-    if(inputCurrency === "CAD") {
-      $("#cadCurrency").text(response.cad);
-    } 
-    if (inputCurrency === "EUR") {
-      $("#eurCurrency").text(response.eur);
-    }  
-    if (inputCurrency === "MXN") {
-      $("#mxnCurrency").text(response.mxn);
-    }  
-    if (inputCurrency === "BBD") {
-      $("#bbdCurrency").text(response.bbd);
-    } 
-    if (inputCurrency === "CNY") {
-      $("#cnyCurrency").text(response.cny);
-    }
+  CurrencyExchange.getExchange(inputCurrencyType).then(function(response) {
+    console.log(response);
   });
 });
 
