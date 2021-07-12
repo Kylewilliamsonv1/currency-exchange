@@ -4,24 +4,18 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import CurrencyExchange from './currency.js';
 
-function clearEntry (){
-  $('#inputAmount').val("");
-  $('#inputCurrency').val("");
-}
-function userEntry() {
-  let amount = parseInt($('#inputAmount').val());
-  let currencyType = $('#inputCurrency').val();
-  return {
-    amount,
-    currencyType,
-  };
-}
+// function clearEntry () {
+//   $('#inputAmount').val("");
+//   $('#inputCurrency').val("");
+// }
+
 $("form#currencyCal").submit(function(event) {
   event.preventDefault();
-  let inputCurrencyType = userEntry().currencyType;
-  console.log(inputCurrencyType);
-  clearEntry(); 
-  CurrencyExchange.getExchange(inputCurrencyType).then(function(response) {
+  let currencyType = $('#inputCurrency').val();
+  let amount = parseInt($('#inputAmount').val());
+  // clearEntry();
+  CurrencyExchange.getExchange(currencyType,amount).then(function(response) {
+    $("#output-amount").text(response);
     console.log(response);
   });
 });

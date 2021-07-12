@@ -1,6 +1,6 @@
 export default class CurrencyExchange  {
-  static getExchange (currencyType) {
-    return fetch(`https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/latest/${currencyType}`)
+  static getExchange (currencyType,amount) {
+    return fetch(`https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/latest/USD`)
       .then(response => {
         if(!response.ok) {
           throw new Error (response.statusText);
@@ -8,11 +8,8 @@ export default class CurrencyExchange  {
         return response.json();
       })
       .then(function(response) {
-        const conRates = response.conversion_rates[currencyType];
-        console.log(conRates);
-        return {
-          conRates,
-        };
+        const inputCurrency = response.conversion_rates[currencyType];
+        return inputCurrency * amount;
       })
       .catch(function(error){
         console.error(`Alert! We have an error: ${error.message}`);
