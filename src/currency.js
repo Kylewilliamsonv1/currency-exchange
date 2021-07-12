@@ -9,7 +9,11 @@ export default class CurrencyExchange  {
       })
       .then(function(response) {
         const inputCurrency = response.conversion_rates[currencyType];
-        return inputCurrency * amount;
+        const inputRate = inputCurrency * amount;
+        return {
+          currencyType,
+          inputRate,
+        };
       })
       .catch(function(error){
         console.error(`Alert! We have an error: ${error.message}`);

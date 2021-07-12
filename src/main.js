@@ -8,6 +8,16 @@ function clearEntry () {
   $('#inputAmount').val("");
   $('#inputCurrency').val("");
 }
+function getData (response) {
+  if(response) {
+    $("#output-currencyType").text(response.currencyType);
+    $("#output-amount").text(response.inputRate);
+    $(".output").show();
+  } else {
+    $('.showErrors').text(`There was an error: ${response.message}`);
+  }
+
+}
 
 $("form#currencyCal").submit(function(event) {
   event.preventDefault();
@@ -15,9 +25,7 @@ $("form#currencyCal").submit(function(event) {
   let amount = parseInt($('#inputAmount').val());
   clearEntry();
   CurrencyExchange.getExchange(currencyType,amount).then(function(response) {
-    $("#output-currencyType").text(currencyType);
-    $("#output-amount").text(response);
-    $(".output").show();
+    getData(response);
   });
 });
 
