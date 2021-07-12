@@ -4,29 +4,29 @@
 
 ## Technologies Used
 
-* _List all_
-* _the major technologies_
-* _you used in your project_
-* _here_
+* _Webpack_
+* _Eslint_
+* _Babel_
+* _Popper_
+* _jQuery_
+* _javascript_
+* _Boostrap_
+
 
 ## Description
 
-_{This is a detailed description of your application. Give as much detail as needed to explain what the application does as well as any other information you want users or other developers to have.}_
+_This application will calculate the user's currency based on the currency code selected._
 
 ## Setup/Installation Requirements
 
-* _This is a great place_
-* _to list setup instructions_
-* _in a simple_
-* _easy-to-understand_
-* _format_
+* _Clone repo currenccy-exchange off GitHub_
+* _Open currenccy-exchange file using terminal_
+* _launch code editor_
+* _run npm install_
+* _run npm start_
 
-_{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this application depends on? We recommend deleting the project from your desktop, re-cloning the project from GitHub, and writing down all the steps necessary to get the project working again.}_
 
-## Known Bugs
-
-* _Any known issues_
-* _should go here_
+_To set up this program the user will need to clone the repository to their desktop and then open it up with a code editor. Once opened the user will then need to run npm install in the terminal to install the dependencies listed in the .json file. The user will then run npm run start to bundle the application and launch the browser._
 
 ## License
 
@@ -37,5 +37,7 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE._
 
 ## Contact Information
+
+Please reach out with any questions, concerns, or suggestions as additional input is encouraged.
 
 _kylewilliamsonv1@gmail.com_ 
