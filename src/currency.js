@@ -16,7 +16,7 @@ export default class CurrencyExchange  {
         };
       })
       .catch(function(error){
-        console.error(`Alert! We have an error: ${error.message}`);
+        ("#apiError").text(`Alert! We have an error: ${error.message}`);
       });
   }
 }

@@ -16,21 +16,34 @@ function getData (response) {
   } else {
     $('.showErrors').text(`There was an error: ${response.message}`);
   }
-
+}
+function curInput() {
+  let currencyType = $('#inputCurrency').val();
+  if (currencyType.includes("CAD","USA","MXN","BBD","CNY","VES")) {
+    return currencyType;
+  } else {
+    $("#curError").text("Please enter a valid currency type.");
+  }
+}
+function amountInput() {
+  let amount = parseInt($('#inputAmount').val());
+  if (isNaN(amount)) {
+    $("#amountError").text("Please enter a valid number."); 
+    return false;
+  } else {
+    return amount;
+  }
 }
 
 $("form#currencyCal").submit(function(event) {
   event.preventDefault();
-  let currencyType = $('#inputCurrency').val();
-  let amount = parseInt($('#inputAmount').val());
+  let amount = amountInput();
+  let currencyType = curInput();
   clearEntry();
   CurrencyExchange.getExchange(currencyType,amount).then(function(response) {
     getData(response);
   });
 });
-
-
-
 
 
 
