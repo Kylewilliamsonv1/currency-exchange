@@ -23,12 +23,13 @@ _This application will calculate the user's currency based on the currency code 
 * _Open currency-exchange file using terminal_
 * _launch code editor_
 * _visit https://www.exchangerate-api.com/ and sign up_
-* _add API key received into the .env file by replacing the exitsting key_
+* _create a file .env in the root directory of the project_
+* _add naming convention "API_KEY=" along with the API key received to the .env file_
 * _run npm install_
 * _run npm start_
 
 
-_To set up this program the user will need to clone the repository to their desktop and then open it up with a code editor. The user will also need to visit https://www.exchangerate-api.com/ and sign up for an API key.  When the API is received the user will need to replace the existing API key in the .env file.  The user will now need to run npm install in the terminal to install the dependencies listed in the .json file. The user will then run npm run start to bundle the application and launch the browser._
+_To set up this program the user will need to clone the repository to their desktop and then open it up with a code editor. The user will also need to visit https://www.exchangerate-api.com/ and sign up for an API key.  When the API is received the user will need to add a .env file to the root directory of the project and insert "API_KEY=" with the API received following. Ex)(API_KEY=api-key-goes-here).  The user will now need to run npm install in the terminal to install the dependencies listed in the .json file. The user will then run npm run start to bundle the application and launch the browser._
 
 ## License
 
