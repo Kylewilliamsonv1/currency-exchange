@@ -13,13 +13,11 @@ function getData (response) {
     $("#output-currencyType").text(response.currencyType);
     $("#output-amount").text(response.inputRate);
     $(".output").show();
-  } else {
-    $('.showErrors').text(`There was an error: ${response.message}`);
   }
 }
 function curInput() {
   let currencyType = $('#inputCurrency').val();
-  if (currencyType.includes("CAD","USA","MXN","BBD","CNY","VES")) {
+  if (["CAD","USD","MXN","BBD","CNY","VES"].includes(currencyType)) {
     return currencyType;
   } else {
     $("#curError").text("Please enter a valid currency type.");
@@ -42,7 +40,11 @@ $("form#currencyCal").submit(function(event) {
   clearEntry();
   CurrencyExchange.getExchange(currencyType,amount).then(function(response) {
     getData(response);
-  });
+  })     
+    .catch(function(error){
+      $(".output").show();
+      $("#apiError").text(`Alert! We have an error: ${error}`);
+    });
 });
 
 
